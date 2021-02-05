@@ -2765,7 +2765,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369826845}
-  m_LocalRotation: {x: 0.6314737, y: -0.052090336, z: 0.042582307, w: 0.77247286}
+  m_LocalRotation: {x: 0.6314737, y: -0.052090373, z: 0.042582337, w: 0.77247286}
   m_LocalPosition: {x: 794.4033, y: 416.4, z: -449.16818}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2857,6 +2857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddfbddc60f15d5e44871c969c3b401c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicManager: {fileID: 0}
 --- !u!4 &371028466
 Transform:
   m_ObjectHideFlags: 0
@@ -13944,7 +13945,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.6314737, y: -0.052090336, z: 0.042582307, w: 0.77247286}
+  m_LocalRotation: {x: 0.6314737, y: -0.052090373, z: 0.042582337, w: 0.77247286}
   m_LocalPosition: {x: 794.4033, y: 416.4, z: -449.16818}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -42818,8 +42819,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 150
+  forwardAccelration: 2.5
   rotationSpeed: 150
-  isAI: 1
+  isAI: 0
   agent: {fileID: 6239196453282615687}
   layerMask:
     serializedVersion: 2

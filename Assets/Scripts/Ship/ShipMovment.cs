@@ -8,10 +8,11 @@ public class ShipMovment : MonoBehaviour
 
     #region Move Towards Stats 
     //Delete this if we go with AI
+    float vertical, horizontal;
     public float speed = 1000f;
+    private float activeForwardSpeed;
+    [SerializeField] private float forwardAccelration = 2.5f;
     public float rotationSpeed = 150;
-    Vector3 position;
-    Quaternion targetRotation = Quaternion.identity;
     #endregion
 
     public bool isAI;
@@ -36,6 +37,9 @@ public class ShipMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        vertical = Input.GetAxis("Vertical");
+        horizontal = Input.GetAxis("Horizontal");
+
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
@@ -49,28 +53,18 @@ public class ShipMovment : MonoBehaviour
                     Instantiate(WaterSplash, spawnPos, Quaternion.identity);
                     agent.SetDestination(hit.point);
                 }
-                else
-                {
-                    Vector3 spawnPos = new Vector3(hit.point.x, -3f, hit.point.z);
-                    position = new Vector3(hit.point.x, -2, hit.point.z);
-                    targetRotation = Quaternion.Euler(position);
-                    Instantiate(WaterSplash, spawnPos, Quaternion.identity);
-                }
             }
         }
 
-        if (!isAI && position != null && transform.position != position) 
+        if (!isAI)
         {
-            transform.position = Vector3.MoveTowards(transform.position, position, speed * Time.deltaTime);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, speed * Time.deltaTime);
+            activeForwardSpeed = Mathf.Lerp(activeForwardSpeed, vertical * speed, forwardAccelration * Time.deltaTime);
+
+            transform.position += (transform.forward * activeForwardSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.up * horizontal * rotationSpeed * Time.deltaTime);
         }
 
-        if (transform.position == position)
-        {
-            transform.position = position;
-        }
-
-        Cheat();
+        //Cheat();
     }
 
     private void OnTriggerStay(Collider other)

@@ -57,6 +57,8 @@ namespace Player {
                     johnnyFootstepsAudio.enabled = false;
                     firstPersonCamera.SetActive(false);
 
+                    shipAgent.enabled = true;
+                    shipController.enabled = true;
                     shipCamera.SetActive(true);
                     plank.SetActive(false);
                 }
@@ -72,6 +74,7 @@ namespace Player {
                 {
                     isOnShip = false;
                     johnyFlying = false;
+
 
                     shipCamera.SetActive(false);
                     firstPersonCamera.SetActive(true);
@@ -95,6 +98,9 @@ namespace Player {
                 johnnyController.enabled = true;
                 johnnyFootsteps.enabled = true;
                 johnnyFootstepsAudio.enabled = true;
+
+                shipAgent.enabled = false;
+                shipController.enabled = false;
             }
         }
 
@@ -112,8 +118,7 @@ namespace Player {
             if (other.gameObject.CompareTag("Helm"))
             {
                 Debug.Log("We're at the helm captain!");
-                shipAgent.enabled = true;
-                shipController.enabled = true;
+
 
                 canMount = true;
             }   
@@ -125,8 +130,6 @@ namespace Player {
             {
                 Debug.Log("We're at the helm captain!");
                 transform.SetParent(other.gameObject.transform);
-                shipAgent.enabled = true;
-                shipController.enabled = true;
 
                 if (isOnShip)
                 {
@@ -140,8 +143,6 @@ namespace Player {
             if (other.gameObject.CompareTag("Helm"))
             {
                 Debug.Log("We've left helm captain!");
-                shipAgent.enabled = false;
-                shipController.enabled = false;
 
                 transform.SetParent(null);
                 canMount = false;
