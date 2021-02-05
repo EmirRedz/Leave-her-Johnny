@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LeaveHerJohny.unity
     guid: 2c9886afbe5b77d4daafe0a9e3d36e5c
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 28e6630c5b4a358428d0eb628beffcf2
   m_configObjects: {}
