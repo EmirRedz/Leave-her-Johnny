@@ -14,6 +14,7 @@ namespace Player {
 
         [Header("Johnny")]
         public GameObject Johnny;
+        public GameObject JohnnyGFX;
         public FirstPersonController johnnyController;
         public CharacterFootsteps johnnyFootsteps;
         public AudioSource johnnyFootstepsAudio;
@@ -56,6 +57,7 @@ namespace Player {
                     johnnyFootsteps.enabled = false;
                     johnnyFootstepsAudio.enabled = false;
                     firstPersonCamera.SetActive(false);
+                    JohnnyGFX.SetActive(true);
 
                     shipAgent.enabled = true;
                     shipController.enabled = true;
@@ -75,6 +77,7 @@ namespace Player {
                     isOnShip = false;
                     johnyFlying = false;
 
+                    JohnnyGFX.SetActive(false);
 
                     shipCamera.SetActive(false);
                     firstPersonCamera.SetActive(true);

@@ -49,9 +49,9 @@ Material:
     - _GradientPosition1: 2.3328786
     - _GradientPosition2: 2.5
     - _LightColorIntensity: 0.3
-    - _MainFoamIntensity: 30
-    - _MainFoamOpacity: 0.15
-    - _MainFoamScale: 3
+    - _MainFoamIntensity: 8.32
+    - _MainFoamOpacity: 1
+    - _MainFoamScale: 7.12
     - _MainFoamSpeed: 0.15
     - _Opacity: 0.09
     - _OpacityDepth: 0.3
@@ -60,9 +60,9 @@ Material:
     - _RefractionIntensity: 1.71
     - _Roughness: 0.3
     - _SecondaryFoamAlwaysVisible: 0
-    - _SecondaryFoamIntensity: 6
-    - _SecondaryFoamOpacity: 0.3
-    - _SecondaryFoamScale: 3
+    - _SecondaryFoamIntensity: 8.79
+    - _SecondaryFoamOpacity: 0.8
+    - _SecondaryFoamScale: 0.5
     - _ShadowIntensity: 1
     - _Shadows: 1
     - _ShadowsIntensity: 1

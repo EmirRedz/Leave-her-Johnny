@@ -7,26 +7,30 @@ namespace Player
 {
     public class MusicManager : MonoBehaviour
     {
-        public AudioClip mainTheme;
-        public AudioClip menuTheme;
-        public AudioClip ending;
+        public AudioClip LeaveHerJohnny;
+        public AudioClip IslandMusic;
+        public AudioClip Symphony;
 
-        string sceneName;
-
-
-        void Start()
-        {
-            OnLevelWasLoaded(0);
-        }
-
+        public string newMusicName;
+        string musicName;
 
         void OnLevelWasLoaded(int sceneIndex)
         {
-            AudioListener.pause = false;
-            string newSceneName = SceneManager.GetActiveScene().name;
-            if (newSceneName != sceneName)
+            newMusicName = SceneManager.GetActiveScene().name;
+            if (newMusicName != musicName)
             {
-                sceneName = newSceneName;
+                musicName = newMusicName;
+                Invoke("PlayMusic", .2f);
+            }
+        }
+
+
+
+        private void Update()
+        {
+            if (newMusicName != musicName)
+            {
+                musicName = newMusicName;
                 Invoke("PlayMusic", .2f);
             }
         }
@@ -35,17 +39,17 @@ namespace Player
         {
             AudioClip clipToPlay = null;
 
-            if (sceneName == "Menu")
+            if (musicName == "Island")
             {
-                clipToPlay = menuTheme;
+                clipToPlay = IslandMusic;
             }
-            else if (sceneName == "LeaveHerJohny")
+            else if (musicName == "LeaveHerJohnny")
             {
-                clipToPlay = mainTheme;
+                clipToPlay = LeaveHerJohnny;
             }
-            else if (sceneName == "Ending")
+            else if (musicName == "Ending")
             {
-                clipToPlay = mainTheme;
+                clipToPlay = Symphony;
             }
             if (clipToPlay != null)
             {

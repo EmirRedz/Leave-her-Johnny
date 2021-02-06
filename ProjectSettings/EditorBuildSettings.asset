@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 37f42ce30329a9342a450e264c54acc8
   - enabled: 1
-    path: Assets/Scenes/LeaveHerJohny.unity
+    path: Assets/Scenes/LeaveHerJohnny.unity
     guid: 2c9886afbe5b77d4daafe0a9e3d36e5c
   - enabled: 1
     path: Assets/Scenes/Ending.unity
