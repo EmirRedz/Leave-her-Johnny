@@ -35,8 +35,8 @@ namespace Player
                 DontDestroyOnLoad(gameObject);
 
                 sounds = GetComponent<Sounds>();
-                musicSources = new AudioSource[3];
-                for (int i = 0; i < 3; i++)
+                musicSources = new AudioSource[2];
+                for (int i = 0; i < 2; i++)
                 {
                     GameObject newMusicSource = new GameObject("Music Source" + (i + 1));
                     newMusicSource.tag = "MusicSource";

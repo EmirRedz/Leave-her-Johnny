@@ -17,14 +17,18 @@ namespace Player
         {
             if (other.gameObject.CompareTag("IslandMusic"))
             {
+                Debug.Log("Island Music");
                 musicManager.newMusicName = "Island";
             }
-            else if (other.gameObject.CompareTag("Symphony"))
+            if (other.gameObject.CompareTag("Symphony"))
             {
+                Debug.Log("Symphony");
                 musicManager.newMusicName = "Ending";
             }
-            else if (other.gameObject.CompareTag("LeaveHerJohnny"))
+            if (other.gameObject.CompareTag("LeaveHerJohnny"))
             {
+                Debug.Log("AC Leave");
+
                 musicManager.newMusicName = "LeaveHerJohnny";
             }
         }

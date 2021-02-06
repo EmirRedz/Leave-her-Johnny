@@ -30,6 +30,7 @@ namespace Player
         {
             if (newMusicName != musicName)
             {
+                Debug.Log("New music detected!");
                 musicName = newMusicName;
                 Invoke("PlayMusic", .2f);
             }
