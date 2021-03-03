@@ -8,6 +8,8 @@ namespace Player
     {
         public MusicManager musicManager;
 
+        private bool isIslandTriggered, isSymphoneTriggered, isJohnnyTriggered;
+
         private void Start()
         {
             musicManager = FindObjectOfType<MusicManager>();
@@ -17,19 +19,27 @@ namespace Player
         {
             if (other.gameObject.CompareTag("IslandMusic"))
             {
-                Debug.Log("Island Music");
-                musicManager.newMusicName = "Island";
+                if (!isIslandTriggered)
+                {
+                    musicManager.newMusicName = "Island";
+                    isIslandTriggered = true;
+                }
             }
             if (other.gameObject.CompareTag("Symphony"))
             {
-                Debug.Log("Symphony");
-                musicManager.newMusicName = "Ending";
+                if (!isSymphoneTriggered)
+                {
+                    musicManager.newMusicName = "Ending";
+                    isSymphoneTriggered = true;
+                }
             }
             if (other.gameObject.CompareTag("LeaveHerJohnny"))
             {
-                Debug.Log("AC Leave");
-
-                musicManager.newMusicName = "LeaveHerJohnny";
+                if (!isJohnnyTriggered)
+                {
+                    musicManager.newMusicName = "LeaveHerJohnny";
+                    isJohnnyTriggered = true;
+                }
             }
         }
     }
